@@ -15,11 +15,17 @@ class JestPlaywrightEnvironment extends PlaywrightEnvironment {
         await super.teardown();
         const video = this.global.page.video();
         if (video != null) {
-            const videoFileName = await this.global.page.video().path();
-            fs.renameSync(
-                videoFileName,
-                `playwright\\videos\\test.webm`
-            );
+            // this was working in 1.10.0:
+            // const videoFileName = await this.global.page.video().path();
+            // fs.renameSync(
+            //     videoFileName,
+            //     `playwright\\videos\\test.webm`
+            // );
+
+            // playwright says it should work in 1.11.1 but it does not:
+            // await this.global.page.video().saveAs(`playwright\\videos\\test.webm`);
+
+            // and actually video is not recorded at all in 1.11.1
         }
     }
 
