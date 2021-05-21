@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "incremental": false,
+    "target": "ES6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "importHelpers": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "pretty": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmitHelpers": false,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": false,
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "strictBindCallApply": true,
+    "typeRoots": [
+      "./../node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "jest",
+      "expect-playwright"
+    ],
+    "lib": [
+      "es6",
+      "dom"
+    ],
+  },
+  "exclude": [],
+  "include": [
+    "./**/*"
+  ]
+}

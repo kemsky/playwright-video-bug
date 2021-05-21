@@ -1,0 +1,15 @@
+/.idea/workspace.xml
+/.idea/misc.xml
+/.idea/uiDesigner.xml
+/.idea/dictionaries
+
+.DS_Store
+
+/node_modules
+
+playwright/videos/**
+playwright/screenshots/**
+playwright/downloads/**
+
+package-lock.json
+tsconfig.tsbuildinfo
