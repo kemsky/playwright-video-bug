@@ -1,4 +1,4 @@
-describe('[Playwright] Login: ', () => {
+describe('[Playwright] login: ', () => {
     it('should login', async () => {
         await page.goto("http://google.com", {timeout: 120000});
         await expect(page).toHaveSelector('img');

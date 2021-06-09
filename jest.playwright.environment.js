@@ -12,21 +12,10 @@ class JestPlaywrightEnvironment extends PlaywrightEnvironment {
     }
 
     async teardown() {
-        await super.teardown();
-        const video = this.global.page.video();
-        if (video != null) {
-            // this was working in 1.10.0:
-            // const videoFileName = await this.global.page.video().path();
-            // fs.renameSync(
-            //     videoFileName,
-            //     `playwright\\videos\\test.webm`
-            // );
-
-            // playwright says it should work in 1.11.1 but it does not:
-            // await this.global.page.video().saveAs(`playwright\\videos\\test.webm`);
-
-            // and actually video is not recorded at all in 1.11.1
-        }
+        await Promise.all([
+            this.global.page.video().saveAs(`playwright\\videos\\${this.global.expect.getState().currentTestName.replace(/[\s/\\?%*:|"<>]/g, '_')}.webm`),
+            super.teardown()
+        ]);
     }
 
     async handleTestEvent(event) {
